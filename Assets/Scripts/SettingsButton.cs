@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Events;
 using UnityEngine;
 
 public class SettingsButton : MonoBehaviour
@@ -12,7 +11,7 @@ public class SettingsButton : MonoBehaviour
 
     void Awake()
     {
-        transform.position = IconPress.positionOfDownloadButton;
+        transform.position = AndroidHomeScreenView.DownLoadButtonPosition;
         transform.localScale = new Vector3(0.01f, 0.01f, 1);
     }
 

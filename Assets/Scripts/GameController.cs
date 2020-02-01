@@ -1,26 +1,19 @@
-﻿using System;
-using UniRx;
+﻿using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private float _delay;
-    [Space]
-    [SerializeField] private LoopConfig _config;
     [SerializeField] private Text _debugText;
-    [SerializeField] private Text _stateText;
 
     private SerialDisposable _detectionDisposable;
-    private SerialDisposable _stateDisposable;
-    private SerialDisposable _delayDisposable;
+    private LoopConfig _config;
     private int _eventIndex = 0;
 
     private void Start()
     {
         _detectionDisposable = new SerialDisposable().AddTo(gameObject);
-        _stateDisposable = new SerialDisposable().AddTo(gameObject);
-        _delayDisposable = new SerialDisposable().AddTo(gameObject);
+        _config = GameUtility.LoadConfig();
 
         SpawnEvent();
     }
@@ -32,27 +25,20 @@ public class GameController : MonoBehaviour
             Application.Quit();
             return;
         }
-
-        var inputDetectionTrigger = _config.Trigger(_eventIndex);
         
-        GameUtility.Log(_debugText, "Create Input Detection for {0}", inputDetectionTrigger);
-
         var eventPrefab = Instantiate(_config.Prefab(_eventIndex), transform);
-        var inputDetection = GameUtility.CreateInputDetection(inputDetectionTrigger, eventPrefab, _stateDisposable, _stateText, _config);
 
-        _detectionDisposable.Disposable = inputDetection.Triggered
+        GameUtility.Log(_debugText, "Create Input Detection for {0}", eventPrefab.name);
+        
+        _detectionDisposable.Disposable = eventPrefab.Trigger
             .Subscribe(trigger =>
             {
-                Destroy(eventPrefab);
+                GameUtility.Log(_debugText, "{0} condition met.", eventPrefab.name);
 
-                GameUtility.Log(_debugText, "{0} condition met.", inputDetectionTrigger);
+                Destroy(eventPrefab.gameObject);
 
-                _delayDisposable.Disposable = Observable.Timer(TimeSpan.FromSeconds(_delay))
-                    .Subscribe(delay =>
-                    {
-                        _eventIndex++;
-                        SpawnEvent();
-                    });
+                _eventIndex++;
+                SpawnEvent();
             });
     }
 }

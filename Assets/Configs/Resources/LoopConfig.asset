@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba4658918624deeb2a12ebf5bb02e98, type: 3}
+  m_Name: LoopConfig
+  m_EditorClassIdentifier: 
+  _events:
+  - EventPrefab: {fileID: 9098613389840192911, guid: 93f5ad064b4c952439703a700f670010,
+      type: 3}
+  - EventPrefab: {fileID: 2639230923647871409, guid: 746b7e8540143d74e846e5c7ec4858c5,
+      type: 3}
+  - EventPrefab: {fileID: 1776097021643109812, guid: 74deb5cbb9051bf419eae1c2e2b94278,
+      type: 3}
+  - EventPrefab: {fileID: 1999404605946448500, guid: 7c592c80be0a5324fa4c72fd671b46f2,
+      type: 3}
+  - EventPrefab: {fileID: 3451337542525161992, guid: e1ca30e786e14bb49a57f447f9100d62,
+      type: 3}
+  - EventPrefab: {fileID: 7614893459368976860, guid: 2e063453794c3f844964792683157b09,
+      type: 3}
+  - EventPrefab: {fileID: 2104273809786387055, guid: 9b55eb67c4a69c64d98aa57591a072ad,
+      type: 3}
+  _shakeThreshold: 3.6

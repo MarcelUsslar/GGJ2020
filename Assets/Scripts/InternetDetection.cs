@@ -7,6 +7,8 @@ public class InternetDetection : IInputDetection
 {
     public IObservable<NetworkReachability> InternetState { get; }
 
+    public IObservable<bool> InAllowedState { get; }
+
     public IObservable<Unit> Triggered { get; }
 
     public InternetDetection(params NetworkReachability[] allowedNetworkStates)
@@ -15,6 +17,8 @@ public class InternetDetection : IInputDetection
             .Select(_ => Application.internetReachability)
             .DistinctUntilChanged();
 
-        Triggered = InternetState.Select(allowedNetworkStates.Contains).Where(active => active).Select(_ => Unit.Default).Take(1);
+        InAllowedState = InternetState.Select(allowedNetworkStates.Contains);
+
+        Triggered = InAllowedState.Where(active => active).Select(_ => Unit.Default);
     }
 }

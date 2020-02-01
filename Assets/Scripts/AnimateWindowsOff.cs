@@ -1,30 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimateWindowsOff : MonoBehaviour
 {
+    [SerializeField] private float _moveSpeed = 50f;
+    [SerializeField] private float _rotationSpeed = -10f;
 
     private void FixedUpdate()
     {
-
-        Move();
-        Rotate();
-        
-    }
-
-    void Move()
-    {
-
-        transform.Translate(new Vector3(50f, 0, 0), Space.World);
-
-    }
-
-    void Rotate()
-    {
-
-        transform.Rotate(new Vector3(0, 0, -10f), Space.Self);
-
+        transform.Translate(new Vector3(_moveSpeed, 0, 0), Space.World);
+        transform.Rotate(new Vector3(0, 0, -_rotationSpeed), Space.Self);
     }
 
 }

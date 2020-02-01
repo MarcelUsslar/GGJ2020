@@ -9,10 +9,19 @@ public static class GameUtility
     [StringFormatMethod("message")]
     public static void Log(Text textField, string message, params object[] parameters)
     {
+        if (textField == null)
+            return;
+
         textField.text = string.Format(message, parameters);
     }
-    public static IInputDetection CreateInputDetection(InputDetection inputDetection, GameObject eventPrefab,
-        SerialDisposable serialDisposable, Text stateText, LoopConfig config)
+
+    public static LoopConfig LoadConfig()
+    {
+        return Resources.Load<LoopConfig>("LoopConfig");
+    }
+
+    public static IInputDetection CreateInputDetection(InputDetection inputDetection,
+        SerialDisposable serialDisposable, Text stateText)
     {
         switch (inputDetection)
         {
@@ -28,7 +37,7 @@ public static class GameUtility
                 return CreateInternetDetection(serialDisposable, stateText, NetworkReachability.NotReachable);
             case InputDetection.Shake:
                 Log(stateText, "Waiting for shake");
-                return new ShakeDetection(config.ShakeThreshold);
+                return new ShakeDetection(LoadConfig().ShakeThreshold);
             case InputDetection.ScreenBrightnessUp:
                 return CreateScreenBrightnessDetection(serialDisposable, stateText, brightness => brightness >= 1.0f);
             case InputDetection.ScreenBrightnessDown:

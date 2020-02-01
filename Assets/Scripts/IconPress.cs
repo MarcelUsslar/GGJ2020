@@ -1,91 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UniRx;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IconPress : MonoBehaviour
 {
+    [SerializeField] private Button _button;
 
-    bool isClicked;
-    float randomDirection;
-    float randomRotation;
-    float yController = 0.25f;
+    private bool _isClicked;
+    private float _randomDirection;
+    private float _randomRotation;
+    private float _positionY = 0.25f;
 
-    public static Vector3 positionOfDownloadButton;
+    public bool IsClicked => _isClicked;
 
     private void Start()
     {
-        randomDirection = Random.Range(-0.1f, 0.1f);
-        randomRotation = Random.Range(10, 20);
+        _randomDirection = Random.Range(-0.1f, 0.1f);
+        _randomRotation = Random.Range(10, 20);
 
         if (Random.value > 0.5f)
-        {
+            _randomRotation = _randomRotation * -1;
 
-            randomRotation = randomRotation * -1;
-
-        }
-
+        _button.OnClickAsObservable().Subscribe(_ => _isClicked = true).AddTo(gameObject);
+        Observable.EveryUpdate().Where(_ => _isClicked).Subscribe(_ => Fall()).AddTo(gameObject);
     }
-
-    private void OnMouseDown()
+    
+    private void Fall()
     {
+        transform.Translate(new Vector3(_randomDirection, _positionY, 0), Space.World);
+        _positionY -= 0.02f;
 
-        if (isClicked)
-            {
-                return;
-            }
-
-            isClicked = true;
-
-        positionOfDownloadButton = transform.position;
-        EventHomeScreen.Instance.Reduce(1);
-
-    }
-
-    void Update()
-    {
-        Fall();
-        CheckHeight();
-    }
-
-    void Fall()
-    {
-
-        if (isClicked)
-        {
-
-            Move();
-            Rotate();
-
-        }
-
-    }
-
-    private void Move()
-    {
-
-        transform.Translate(new Vector3(randomDirection, yController, 0), Space.World);
-        yController = yController - 0.02f;
-
-    }
-
-    void Rotate()
-    {
-
-        transform.Rotate(new Vector3(0, 0, randomRotation));
-
-    }
-
-    void CheckHeight()
-    {
+        transform.Rotate(new Vector3(0, 0, _randomRotation));
 
         if (transform.position.y < -5)
-        {
-
-            EventHomeScreen.Instance.CheckIfDone();
-            Destroy(this.gameObject);
-
-        }
-
+            Destroy(gameObject);
     }
-
 }

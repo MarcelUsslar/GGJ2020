@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LoopConfig", menuName = "Config/LoopConfig")]
@@ -8,8 +9,7 @@ public class LoopConfig : ScriptableObject
     [Serializable]
     private class EventMapping
     {
-        public InputDetection Trigger;
-        public GameObject EventPrefab;
+        public AbstractBasicTriggerView EventPrefab;
     }
 
     [SerializeField] private List<EventMapping> _events;
@@ -17,13 +17,8 @@ public class LoopConfig : ScriptableObject
 
     public int EventCount => _events.Count;
     public float ShakeThreshold => _shakeThreshold;
-
-    public InputDetection Trigger(int index)
-    {
-        return _events[index].Trigger;
-    }
-
-    public GameObject Prefab(int index)
+    
+    public AbstractBasicTriggerView Prefab(int index)
     {
         return _events[index].EventPrefab;
     }
