@@ -16,4 +16,7 @@ public class ShakeDetection : IInputDetection
             .Where(active => active == triggerWhenActive)
             .Select(_ => Unit.Default).Take(1);
     }
+
+    public void Dispose()
+    { }
 }
