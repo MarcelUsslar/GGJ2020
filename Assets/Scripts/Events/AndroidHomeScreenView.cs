@@ -14,20 +14,23 @@ namespace Events
         
         private void Awake()
         {
-            var availableButtons = Observable.EveryUpdate().Select(_ => _buttons.Count(button => button != null));
+            foreach (var button in _buttons)
+            {
+                button.OnDestroy.Subscribe(_ => _buttons.Remove(button)).AddTo(gameObject);
+                button.OnDestroy.Where(_ => _buttons.Count == 0).Subscribe(_ => OnComplete()).AddTo(gameObject);
+            }
 
-            availableButtons.Where(buttons => buttons == 0)
-                .Subscribe(_ => OnComplete()).AddTo(gameObject);
-
-            availableButtons.Where(buttons => buttons == 1)
-                .Select(_ => _buttons.Single(button => button.IsClicked)).Take(1)
-                .Subscribe(ActivateDownloadButton).AddTo(gameObject);
+            Observable.EveryUpdate()
+                .Select(_ => _buttons.Count(button => button.IsClicked))
+                .DistinctUntilChanged().Where(buttons => buttons == 1 && _buttons.Count == 1).Take(1)
+                .Subscribe(_ => ActivateDownloadButton())
+                .AddTo(gameObject);
         }
 
-        private void ActivateDownloadButton(IconPress button)
+        private void ActivateDownloadButton()
         {
             _downLoadIcon.SetActive(true);
-            DownLoadButtonPosition = button.transform.position;
+            DownLoadButtonPosition = _buttons[0].transform.position;
             _downLoadIcon.transform.position = DownLoadButtonPosition;
         }
     }
