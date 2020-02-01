@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventBlackscreen : MonoBehaviour
 {
 
-	bool Flash;
+	bool isBrightnessMax;
 
     private void Start()
     {
@@ -15,14 +15,14 @@ public class EventBlackscreen : MonoBehaviour
     void update()
 	{
 
-		CheckFlash();
+		CheckBrightness();
 
 	}
 
-    void CheckFlash()
+    void CheckBrightness()
 	{
 
-        if (Flash)
+        if (isBrightnessMax)
 		{
 
 			Debug.Log("Done");
