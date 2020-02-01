@@ -7,7 +7,7 @@ public class EventBlackscreen : MonoBehaviour
 
 	bool isBrightnessMax;
 
-    private void Start()
+    private void Awake()
     {
         Screen.brightness = 0f;
     }
