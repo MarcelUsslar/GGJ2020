@@ -10,4 +10,6 @@
     ScreenBrightnessDown = 31,
     VolumeUp = 40,
     VolumeDown = 41,
+    MicrophoneLoudInput = 50,
+    MicrophoneSilentInput = 51,
 }

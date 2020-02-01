@@ -37,6 +37,10 @@ public static class GameUtility
                 return CreateVolumeDetection(serialDisposable, stateText, true);
             case InputDetection.VolumeDown:
                 return CreateVolumeDetection(serialDisposable, stateText, false);
+            case InputDetection.MicrophoneLoudInput:
+                return CreateMicrophoneInputDetection(serialDisposable, stateText, inputVolume => inputVolume >= 0.5f);
+            case InputDetection.MicrophoneSilentInput:
+                return CreateMicrophoneInputDetection(serialDisposable, stateText, inputVolume => inputVolume <= 0.0002f);
             default:
                 throw new ArgumentOutOfRangeException(nameof(inputDetection), inputDetection, null);
         }
@@ -74,5 +78,18 @@ public static class GameUtility
         serialDisposable.Disposable = volumeDetection.CurrentVolume.Subscribe(volume => Log(stateText, "Volume: {0}", volume));
 
         return volumeDetection;
+    }
+
+    private static MicrophoneInputDetection CreateMicrophoneInputDetection(SerialDisposable serialDisposable, Text stateText, Func<float, bool> hasReachedInputVolume)
+    {
+        var microphoneInput = new MicrophoneInputDetection(hasReachedInputVolume);
+
+        var disposable = new CompositeDisposable();
+        serialDisposable.Disposable = disposable;
+
+        microphoneInput.InputVolume.Subscribe(volume => Log(stateText, "Input Volume: {0}", volume)).AddTo(disposable);
+        Disposable.Create(() => microphoneInput.Dispose()).AddTo(disposable);
+
+        return microphoneInput;
     }
 }

@@ -43,4 +43,10 @@ MonoBehaviour:
   - Trigger: 41
     EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
       type: 3}
+  - Trigger: 50
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 51
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
   _shakeThreshold: 3.6
