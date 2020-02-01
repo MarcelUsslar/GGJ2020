@@ -16,7 +16,7 @@ public class AnimateWindowsOff : MonoBehaviour
     void Move()
     {
 
-        transform.Translate(new Vector3(0.5f, 0, 0), Space.World);
+        transform.Translate(new Vector3(50f, 0, 0), Space.World);
 
     }
 
