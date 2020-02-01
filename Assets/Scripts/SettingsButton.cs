@@ -8,6 +8,8 @@ public class SettingsButton : MonoBehaviour
     float scale;
     int AnimationState = 0;
 
+    public GameObject EventSettingsMenuScript;
+
     void Awake()
     {
         transform.position = IconPress.positionOfDownloadButton;
@@ -72,6 +74,14 @@ public class SettingsButton : MonoBehaviour
             scale = scale - 0.02f;
 
         }
+
+    }
+
+    private void OnMouseDown()
+    {
+
+        EventSettingsMenuScript.GetComponent<EventSettingsMenu>().OpenSettings();
+        Destroy(this.gameObject);
 
     }
 

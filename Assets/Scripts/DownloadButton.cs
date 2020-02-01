@@ -5,44 +5,42 @@ using UnityEngine;
 public class DownloadButton : MonoBehaviour
 {
 
-    public GameObject DownloadingIcon;
+    //public GameObject DownloadingIcon;
 
-    private void OnMouseDown()
-    {
+    //private void OnMouseDown()
+    //{
 
-        //wifi check
-        if(true)
-        {
+    //    //wifi check
+    //    if(true)
+    //    {
 
-            DownloadingIcon.transform.position = this.transform.position;
-            DownloadingIcon.SetActive(true);
-            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            Invoke("CallDone", 5);
+    //        DownloadingIcon.transform.position = this.transform.position;
+    //        DownloadingIcon.SetActive(true);
+    //        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    //        Invoke("Done", 5);
 
-        }
+    //    }
 
-    }
+    //}
 
-    private void Update()
-    {
-        RotateDownloadingIcon();
-    }
+    //private void Update()
+    //{
+    //    RotateDownloadingIcon();
+    //}
 
-    void RotateDownloadingIcon()
-    {
+    //void RotateDownloadingIcon()
+    //{
 
-        DownloadingIcon.transform.Rotate(new Vector3(0, 0, -5f));
+    //    DownloadingIcon.transform.Rotate(new Vector3(0, 0, -5f));
 
 
-    }
+    //}
 
-    void CallDone()
-    {
-        Debug.Log("called");
-        DownloadingIcon.SetActive(false);
-        EventHomescreenwDB.Instance.Downloaded();
+    //void Done()
+    //{
+    //    Debug.Log("done");
 
-    }
+    //}
 
 
 }

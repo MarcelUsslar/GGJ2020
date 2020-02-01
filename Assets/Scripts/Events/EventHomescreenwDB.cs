@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class EventHomescreenwDB : MonoBehaviour
 {
-    public GameObject downloadIcon;
-    public GameObject settingsButton;
-    public static EventHomescreenwDB Instance;
 
-    void Awake()
+
+    public GameObject DownloadingIcon;
+
+    private void OnMouseDown()
     {
-        Instance = this;
-        //downloadIcon.transform.position = IconPress.positionOfDownloadButton;
+
+        //wifi check
+        if (true)
+        {
+
+            DownloadingIcon.transform.position = this.transform.position;
+            DownloadingIcon.SetActive(true);
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Invoke("Done", 5);
+
+        }
+
     }
 
-    public void Downloaded()
+    private void Update()
+    {
+        RotateDownloadingIcon();
+    }
+
+    void RotateDownloadingIcon()
     {
 
-        settingsButton.SetActive(true);
- 
+        DownloadingIcon.transform.Rotate(new Vector3(0, 0, -5f));
+
+
+    }
+
+    void Done()
+    {
+        Debug.Log("done");
 
     }
 
