@@ -15,6 +15,8 @@ public class EventSettingsMenu : MonoBehaviour
     float a = 0;
     float b = 0;
 
+    bool Airplane;
+
     public void OpenSettings()
     {
 
@@ -32,7 +34,7 @@ public class EventSettingsMenu : MonoBehaviour
         OpenAnimation();
 
         //AirplaneMode
-        if (true)
+        if (Airplane)
         {
 
             Done();
@@ -43,6 +45,7 @@ public class EventSettingsMenu : MonoBehaviour
     void OpenAnimation()
     {
 
+        Airplane = true;
         if(SettingsBackground.active)
         {
 
