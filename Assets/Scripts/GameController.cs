@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
         _detectionDisposable.Disposable = inputDetection.Triggered
             .Subscribe(trigger =>
             {
-                inputDetection.Dispose();
                 Destroy(eventPrefab);
 
                 Log(_debugText, "{0} condition met.", inputDetectionTrigger);
@@ -92,7 +91,7 @@ public class GameController : MonoBehaviour
     private ShakeDetection CreateShakeDetection()
     {
         Log(_stateText, "Waiting for shake");
-        return new ShakeDetection(_config.ShakeThreshold, true);
+        return new ShakeDetection(_config.ShakeThreshold);
     }
 
     [StringFormatMethod("message")]

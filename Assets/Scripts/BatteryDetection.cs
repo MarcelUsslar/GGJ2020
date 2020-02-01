@@ -8,7 +8,6 @@ public class BatteryDetection : IInputDetection
     public IObservable<BatteryStatus> BatteryStatus { get; }
 
     public IObservable<Unit> Triggered { get; }
-    public IObservable<bool> Active { get; }
 
     public BatteryDetection(params BatteryStatus[] allowedBatteryStatuses)
     {
@@ -16,11 +15,8 @@ public class BatteryDetection : IInputDetection
             .Select(_ => SystemInfo.batteryStatus)
             .DistinctUntilChanged();
         
-        Active = BatteryStatus.Select(allowedBatteryStatuses.Contains);
+        var isActive = BatteryStatus.Select(allowedBatteryStatuses.Contains);
 
-        Triggered = Active.Where(active => active).Select(_ => Unit.Default).Take(1);
+        Triggered = isActive.Where(active => active).Select(_ => Unit.Default).Take(1);
     }
-
-    public void Dispose()
-    { }
 }
