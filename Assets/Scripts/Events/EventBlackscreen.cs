@@ -7,6 +7,11 @@ public class EventBlackscreen : MonoBehaviour
 
 	bool Flash;
 
+    private void Start()
+    {
+        Screen.brightness = 0f;
+    }
+
     void update()
 	{
 
