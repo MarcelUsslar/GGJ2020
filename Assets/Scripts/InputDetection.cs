@@ -1,8 +1,13 @@
 ﻿public enum InputDetection
 {
-    Battery,
-    Internet,
-    Wifi,
-    MobileData,
-    Shake
+    Battery = 0,
+    Internet = 10,
+    Wifi = 11,
+    MobileData = 12,
+    Disconnected = 13,
+    Shake = 20,
+    ScreenBrightnessUp = 30,
+    ScreenBrightnessDown = 31,
+    VolumeUp = 40,
+    VolumeDown = 41,
 }

@@ -548,6 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7bc169502d4f3e9c30c2249815fafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delay: 2
   _config: {fileID: 11400000, guid: a4ca364245dc0fd42be8688896782977, type: 2}
   _debugText: {fileID: 1382345346}
   _stateText: {fileID: 75904869}

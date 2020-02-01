@@ -13,13 +13,34 @@ MonoBehaviour:
   m_Name: LoopConfig
   m_EditorClassIdentifier: 
   _events:
-  - Trigger: 1
-    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
-      type: 3}
-  - Trigger: 4
-    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
-      type: 3}
   - Trigger: 0
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 10
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 11
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 12
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 13
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 20
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 30
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 31
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 40
+    EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
+      type: 3}
+  - Trigger: 41
     EventPrefab: {fileID: 6820836910590826377, guid: 325b77e6c3338d64d9210b727fcbd2b4,
       type: 3}
   _shakeThreshold: 3.6

@@ -6,17 +6,21 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private float _delay;
+    [Space]
     [SerializeField] private LoopConfig _config;
     [SerializeField] private Text _debugText;
     [SerializeField] private Text _stateText;
 
     private SerialDisposable _detectionDisposable;
+    private SerialDisposable _stateDisposable;
     private SerialDisposable _delayDisposable;
     private int _eventIndex = 0;
 
     private void Start()
     {
         _detectionDisposable = new SerialDisposable().AddTo(gameObject);
+        _stateDisposable = new SerialDisposable().AddTo(gameObject);
         _delayDisposable = new SerialDisposable().AddTo(gameObject);
 
         SpawnEvent();
@@ -44,7 +48,7 @@ public class GameController : MonoBehaviour
 
                 Log(_debugText, "{0} condition met.", inputDetectionTrigger);
 
-                _delayDisposable.Disposable = Observable.Timer(TimeSpan.FromSeconds(5))
+                _delayDisposable.Disposable = Observable.Timer(TimeSpan.FromSeconds(_delay))
                     .Subscribe(delay =>
                     {
                         _eventIndex++;
@@ -65,8 +69,19 @@ public class GameController : MonoBehaviour
                 return CreateInternetDetection(NetworkReachability.ReachableViaLocalAreaNetwork);
             case InputDetection.MobileData:
                 return CreateInternetDetection(NetworkReachability.ReachableViaCarrierDataNetwork);
+            case InputDetection.Disconnected:
+                return CreateInternetDetection(NetworkReachability.NotReachable);
             case InputDetection.Shake:
-                return CreateShakeDetection();
+                Log(_stateText, "Waiting for shake");
+                return new ShakeDetection(_config.ShakeThreshold);
+            case InputDetection.ScreenBrightnessUp:
+                return CreateScreenBrightnessDetection(brightness => brightness >= 1.0f);
+            case InputDetection.ScreenBrightnessDown:
+                return CreateScreenBrightnessDetection(brightness => brightness <= 0.5f);
+            case InputDetection.VolumeUp:
+                return CreateVolumeDetection(true);
+            case InputDetection.VolumeDown:
+                return CreateVolumeDetection(false);
             default:
                 throw new ArgumentOutOfRangeException(nameof(inputDetection), inputDetection, null);
         }
@@ -75,7 +90,7 @@ public class GameController : MonoBehaviour
     private BatteryDetection CreateBatteryDetection()
     {
         var batteryDetection = new BatteryDetection(BatteryStatus.Charging, BatteryStatus.Full);
-        batteryDetection.BatteryStatus.Subscribe(status => Log(_stateText, "Status: {0}", status)).AddTo(gameObject);
+        _stateDisposable.Disposable = batteryDetection.BatteryStatus.Subscribe(status => Log(_stateText, "Status: {0}", status));
 
         return batteryDetection;
     }
@@ -83,15 +98,25 @@ public class GameController : MonoBehaviour
     private InternetDetection CreateInternetDetection(params NetworkReachability[] allowedNetworkStates)
     {
         var internetDetection = new InternetDetection(allowedNetworkStates);
-        internetDetection.InternetState.Subscribe(status => Log(_stateText, "Status: {0}", status)).AddTo(gameObject);
+        _stateDisposable.Disposable = internetDetection.InternetState.Subscribe(status => Log(_stateText, "Status: {0}", status));
 
         return internetDetection;
     }
-
-    private ShakeDetection CreateShakeDetection()
+    
+    private ScreenBrightnessDetection CreateScreenBrightnessDetection(Func<float, bool> hasReachedBrightness)
     {
-        Log(_stateText, "Waiting for shake");
-        return new ShakeDetection(_config.ShakeThreshold);
+        var screenBrightnessDetection = new ScreenBrightnessDetection(hasReachedBrightness);
+        _stateDisposable.Disposable = screenBrightnessDetection.ScreenBrightness.Subscribe(brightness => Log(_stateText, "Status: {0}", brightness));
+        
+        return screenBrightnessDetection;
+    }
+
+    private VolumeDetection CreateVolumeDetection(bool increaseVolume)
+    {
+        var volumeDetection = new VolumeDetection(increaseVolume);
+        _stateDisposable.Disposable = volumeDetection.CurrentVolume.Subscribe(volume => Log(_stateText, "Volume: {0}", volume));
+
+        return volumeDetection;
     }
 
     [StringFormatMethod("message")]
