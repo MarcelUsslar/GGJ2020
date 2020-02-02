@@ -19,22 +19,11 @@ namespace Events
         private float _generalAlpha = 0;
         private float _koreanAlpha = 0;
 
-        private bool _isScalingUp = true;
-
         private void Awake()
         {
-            var settingButtonTransform = _settingButton.transform;
-            settingButtonTransform.position = AndroidHomeScreenView.DownLoadButtonPosition;
+            _settingButton.transform.position = AndroidHomeScreenView.DownLoadButtonPosition;
             
             _settingButton.OnClickAsObservable().Subscribe(_ => OpenSettings()).AddTo(gameObject);
-
-            var buttonScale = Observable.EveryUpdate().Select(_ => _isScalingUp ? 0.05f : -0.02f).StartWith(0.0f)
-                .Pairwise((oldValue, newValue) => oldValue + newValue).ToReadOnlyReactiveProperty().AddTo(gameObject);
-
-            buttonScale.Where(scale => scale >= 0.4f).Take(1).Delay(TimeSpan.FromSeconds(0.2f))
-                .Subscribe(_ => _isScalingUp = false).AddTo(gameObject);
-
-            buttonScale.Subscribe(scale => transform.localScale = new Vector3(scale, scale, 1)).AddTo(gameObject);
         }
 
         private void OpenSettings()
