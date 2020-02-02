@@ -146,6 +146,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2104273809786387055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578444635461704672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a26c33d99ff54b7fbf94d0db317e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSystem: {fileID: 496691383731278222}
+  _downloadButton: {fileID: 8776648663820418968}
+  _downloadingIcon: {fileID: 1658813777482298023}
 --- !u!1 &5430547544465340367
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,21 +278,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2104273809786387055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4578444635461704672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a26c33d99ff54b7fbf94d0db317e2c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioSystem: {fileID: 496691383731278222}
-  _downloadButton: {fileID: 8776648663820418968}
-  _downloadingIcon: {fileID: 1658813777482298023}
 --- !u!1 &8173200199478633259
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,11 +463,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
-        type: 3}
-      propertyPath: _onSuccess
-      value: 
-      objectReference: {fileID: 8300000, guid: 132ad3e653e5f914d946423a5c6fc932, type: 3}
     - target: {fileID: 8306963237456560474, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
       propertyPath: m_Name

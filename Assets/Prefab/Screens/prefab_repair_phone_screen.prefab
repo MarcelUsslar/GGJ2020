@@ -345,11 +345,6 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5c35216134aa29a46bfff59b535f3d34, type: 3}
     - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
-      propertyPath: _initialLoopDelay
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
-        type: 3}
       propertyPath: _loopedClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 59e9cec00992d3347be0f6149c1ae4a8, type: 3}
@@ -363,6 +358,11 @@ PrefabInstance:
       propertyPath: _loopedClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 26c4860ab0fd49e4bbd88bbc99bc4213, type: 3}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _initialStartDelay
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8306963237456560474, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
       propertyPath: m_Name

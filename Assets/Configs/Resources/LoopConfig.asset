@@ -36,3 +36,4 @@ MonoBehaviour:
   - EventPrefab: {fileID: 6038835973242432675, guid: 1fd698b23eabfff4fa19ff9ebef1d549,
       type: 3}
   _shakeThreshold: 3.6
+  _requiredVolume: 0.8

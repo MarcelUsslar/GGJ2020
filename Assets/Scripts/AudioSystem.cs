@@ -58,7 +58,7 @@ public class AudioSystem : MonoBehaviour
             .Subscribe(_ => onClipEnded());
     }
 
-    private void PlayClipExternal(AudioClip clip)
+    public void PlayClipExternal(AudioClip clip)
     {
         if (clip == null)
             return;

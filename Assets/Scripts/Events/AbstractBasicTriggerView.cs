@@ -7,6 +7,7 @@ namespace Events
     public class AbstractBasicTriggerView : MonoBehaviour, ITriggerView
     {
         [SerializeField] private AudioSystem _audioSystem;
+        protected AudioSystem AudioSystem => _audioSystem;
 
         public IObservable<Unit> Trigger => _trigger;
 

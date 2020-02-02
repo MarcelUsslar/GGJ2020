@@ -14,9 +14,11 @@ public class LoopConfig : ScriptableObject
 
     [SerializeField] private List<EventMapping> _events;
     [SerializeField] private float _shakeThreshold;
+    [SerializeField] private float _requiredVolume;
 
     public int EventCount => _events.Count;
     public float ShakeThreshold => _shakeThreshold;
+    public float RequiredVolume => _requiredVolume;
     
     public AbstractBasicTriggerView Prefab(int index)
     {

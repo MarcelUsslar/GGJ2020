@@ -7,6 +7,8 @@ namespace Events
 {
     public class EnglishSettingsMenuView : AbstractBasicTriggerView
     {
+        [SerializeField] private AudioClip _vacuumSound;
+        [Space]
         [SerializeField] private RectTransform _error1;
         [SerializeField] private RectTransform _error2;
         [SerializeField] private RectTransform _error3;
@@ -25,7 +27,9 @@ namespace Events
             inputDetection.Triggered.Subscribe(_ => _animate = true).AddTo(gameObject);
             inputDetection.Triggered.Delay(TimeSpan.FromSeconds(1)).Subscribe(_ => OnComplete()).AddTo(gameObject);
 
-            Observable.EveryUpdate().Where(_ => _animate).Subscribe(_ => Vacuum()).AddTo(gameObject);
+            var canAnimate = Observable.EveryUpdate().Where(_ => _animate);
+            canAnimate.Subscribe(_ => Vacuum()).AddTo(gameObject);
+            canAnimate.Take(1).Subscribe(_ => AudioSystem.PlayClipExternal(_vacuumSound)).AddTo(gameObject);
 
             InitializeVacuum();
         }

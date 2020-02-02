@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSystem: {fileID: 9045393278642014237}
+  _vacuumSound: {fileID: 8300000, guid: 16af52bbd22bd66408d45acd8efa6808, type: 3}
   _error1: {fileID: 5113045540238005275}
   _error2: {fileID: 2728733613994340073}
   _error3: {fileID: 4347350632847684699}
@@ -149,19 +150,19 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
+      propertyPath: _loopedClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
       propertyPath: _onStart
       value: 
       objectReference: {fileID: 8300000, guid: b448b3cf8744a5c48a65a293b5f034fe, type: 3}
     - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
-      propertyPath: _initialStartDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
-        type: 3}
-      propertyPath: _onSuccess
+      propertyPath: _loopedClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 16af52bbd22bd66408d45acd8efa6808, type: 3}
+      objectReference: {fileID: 8300000, guid: b448b3cf8744a5c48a65a293b5f034fe, type: 3}
     - target: {fileID: 7916774416845957573, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
       propertyPath: m_Name

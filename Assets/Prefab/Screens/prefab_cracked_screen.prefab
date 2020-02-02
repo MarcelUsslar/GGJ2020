@@ -973,18 +973,13 @@ PrefabInstance:
     - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
       propertyPath: _loopDelay
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
       propertyPath: _initialLoopDelay
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
-        type: 3}
-      propertyPath: _onSuccess
-      value: 
-      objectReference: {fileID: 8300000, guid: 3898d1c63f5ca9e40ae5f48fcc8ee4fe, type: 3}
     - target: {fileID: 8306963237456560474, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
       propertyPath: m_Name

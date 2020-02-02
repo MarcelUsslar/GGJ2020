@@ -50,7 +50,7 @@ public static class GameUtility
             case InputDetection.VolumeDown:
                 return CreateVolumeDetection(serialDisposable, stateText, false);
             case InputDetection.MicrophoneLoudInput:
-                return CreateMicrophoneInputDetection(serialDisposable, stateText, inputVolume => inputVolume >= 0.5f);
+                return CreateMicrophoneInputDetection(serialDisposable, stateText, inputVolume => inputVolume >= LoadConfig().RequiredVolume);
             case InputDetection.MicrophoneSilentInput:
                 return CreateMicrophoneInputDetection(serialDisposable, stateText, inputVolume => inputVolume <= 0.0002f);
             default:

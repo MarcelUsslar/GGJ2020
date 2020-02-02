@@ -44,7 +44,6 @@ public class VolumeDetection : IInputDetection
             current = audioManager.Call<int>("getStreamVolume", K_streamMusic);
         }
 
-        //return current;
         return (float)current / (float)max;
 #endif
         return 0.0f;

@@ -155,11 +155,6 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: a5beae1e846ce4849b1dea4f83052e5f, type: 3}
     - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
-      propertyPath: _initialStartDelay
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
-        type: 3}
       propertyPath: _loopedClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: d80e6a8247a783d41819ddc052de04bf, type: 3}
