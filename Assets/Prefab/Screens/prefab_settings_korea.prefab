@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 695501168148973269}
   - component: {fileID: 2015635977617778546}
   - component: {fileID: 6668949991154968365}
+  - component: {fileID: 3841475048547687614}
   m_Layer: 5
   m_Name: btn_settings
   m_TagString: Untagged
@@ -117,6 +118,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!111 &3841475048547687614
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204924187417130452}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d9c89a0d947a24d609e79b12002d8ffa, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d9c89a0d947a24d609e79b12002d8ffa, type: 2}
+  - {fileID: 7400000, guid: dcc459bd666524db69ff59755d88876b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2391246615307166240
 GameObject:
   m_ObjectHideFlags: 0
