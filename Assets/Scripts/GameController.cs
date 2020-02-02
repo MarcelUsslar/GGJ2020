@@ -25,7 +25,15 @@ public class GameController : MonoBehaviour
         var disposable = new SerialDisposable();
         foreach (var detection in EnumHelper<InputDetection>.Iterator)
         {
-            GameUtility.CreateInputDetection(detection, disposable, null);
+            try
+            {
+                GameUtility.CreateInputDetection(detection, disposable, null);
+            }
+            catch
+            {
+                disposable.Dispose();
+                disposable = new SerialDisposable();
+            }
         }
 
         disposable.Dispose();

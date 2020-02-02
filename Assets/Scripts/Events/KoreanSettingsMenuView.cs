@@ -8,7 +8,6 @@ namespace Events
     public class KoreanSettingsMenuView : AbstractBasicTriggerView
     {
         [SerializeField] private Button _settingButton;
-        [SerializeField] private GameObject _androidBackground;
         [Space]
         [SerializeField] private Image _settingsBackground;
         [SerializeField] private Image _koreanSettingsText;
@@ -40,7 +39,7 @@ namespace Events
 
         private void OpenSettings()
         {
-            _androidBackground.SetActive(false);
+            Destroy(_settingButton.gameObject);
 
             var serialDisposable = new SerialDisposable().AddTo(gameObject);
             var inputDetection = GameUtility.CreateInputDetection(InputDetection.Disconnected, serialDisposable, null);

@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 121, y: 121}
+  m_SizeDelta: {x: 72, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &695501168148973269
 CanvasRenderer:
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a868ea9ba355349989f7bfefab074833, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 193811c843de5f04e87f18ca1ef105d7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -147,8 +147,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1694783011298068707}
-  m_Father: {fileID: 8785958895442019084}
-  m_RootOrder: 5
+  m_Father: {fileID: 8622268718580946124}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -204,7 +204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingButton: {fileID: 6668949991154968365}
-  _androidBackground: {fileID: 2391246615307166240}
   _settingsBackground: {fileID: 2076169459934654960}
   _koreanSettingsText: {fileID: 6769837412432986378}
   _korean1: {fileID: 1057287824048274025}
@@ -327,6 +326,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1540266755063914477, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1675841427396731468, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
       propertyPath: m_IsActive
@@ -343,18 +347,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2cfa406c42e62ce46a903480c80f34ab,
         type: 3}
+    - target: {fileID: 3206008510719815250, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3438781243133391295, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0426fa7158a2d49f7a4e74e94690c9e7,
         type: 3}
+    - target: {fileID: 3438781243133391295, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5390364854644746109, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: fe6d03866769a4c978a3aff6a895aac1,
         type: 3}
+    - target: {fileID: 5390364854644746109, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6800221598543234621, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
       propertyPath: m_IsActive
@@ -364,6 +383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880531461559410344, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7916774416845957573, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
@@ -381,6 +405,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 395825d896aa84ca9a137a240b9f3cc0,
         type: 3}
+    - target: {fileID: 9160727566659392817, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e35469b085fc414aa355ab83a3de63e, type: 3}
 --- !u!1 &2041050785334314653 stripped
@@ -389,9 +418,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8182280224455700312}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &8785958895442019084 stripped
+--- !u!224 &8622268718580946124 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 603679796314238036, guid: 6e35469b085fc414aa355ab83a3de63e,
+  m_CorrespondingSourceObject: {fileID: 442829634016934804, guid: 6e35469b085fc414aa355ab83a3de63e,
     type: 3}
   m_PrefabInstance: {fileID: 8182280224455700312}
   m_PrefabAsset: {fileID: 0}
