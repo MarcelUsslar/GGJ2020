@@ -1,4 +1,3 @@
-﻿using System;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +6,7 @@ namespace Events
 {
     public class KoreanSettingsMenuView : AbstractBasicTriggerView
     {
-        [SerializeField] private Button _settingButton;
+        [SerializeField] private Transform _settingButtonImage;
         [Space]
         [SerializeField] private Image _settingsBackground;
         [SerializeField] private Image _koreanSettingsText;
@@ -21,14 +20,7 @@ namespace Events
 
         private void Awake()
         {
-            _settingButton.transform.position = AndroidHomeScreenView.DownLoadButtonPosition;
-            
-            _settingButton.OnClickAsObservable().Subscribe(_ => OpenSettings()).AddTo(gameObject);
-        }
-
-        private void OpenSettings()
-        {
-            Destroy(_settingButton.gameObject);
+            _settingButtonImage.position = AndroidHomeScreenView.DownLoadButtonPosition;
 
             var serialDisposable = new SerialDisposable().AddTo(gameObject);
             var inputDetection = GameUtility.CreateInputDetection(InputDetection.Disconnected, serialDisposable, null);

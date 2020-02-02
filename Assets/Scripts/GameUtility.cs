@@ -42,9 +42,9 @@ public static class GameUtility
                 Log(stateText, "Waiting for shake");
                 return new ShakeDetection(LoadConfig().ShakeThreshold);
             case InputDetection.ScreenBrightnessUp:
-                return CreateScreenBrightnessDetection(serialDisposable, stateText, brightness => brightness >= 1.0f);
+                return CreateScreenBrightnessDetection(serialDisposable, stateText, brightness => brightness >= 0.95f);
             case InputDetection.ScreenBrightnessDown:
-                return CreateScreenBrightnessDetection(serialDisposable, stateText, brightness => brightness <= 0.5f);
+                return CreateScreenBrightnessDetection(serialDisposable, stateText, brightness => brightness <= 0.7f);
             case InputDetection.VolumeUp:
                 return CreateVolumeDetection(serialDisposable, stateText, true);
             case InputDetection.VolumeDown:

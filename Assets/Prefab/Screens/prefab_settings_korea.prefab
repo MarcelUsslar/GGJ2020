@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 1694783011298068707}
   - component: {fileID: 695501168148973269}
   - component: {fileID: 2015635977617778546}
-  - component: {fileID: 6668949991154968365}
-  - component: {fileID: 3841475048547687614}
   m_Layer: 5
   m_Name: btn_settings
   m_TagString: Untagged
@@ -75,66 +73,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6668949991154968365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204924187417130452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2015635977617778546}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!111 &3841475048547687614
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204924187417130452}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d9c89a0d947a24d609e79b12002d8ffa, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: d9c89a0d947a24d609e79b12002d8ffa, type: 2}
-  - {fileID: 7400000, guid: dcc459bd666524db69ff59755d88876b, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1784820005695689604
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,25 +146,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2687470082886070310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041050785334314653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a130375a7ace44e99963c2e43d1dfa05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioSystem: {fileID: 2683646122027797747}
-  _settingButton: {fileID: 6668949991154968365}
-  _settingsBackground: {fileID: 2076169459934654960}
-  _koreanSettingsText: {fileID: 6769837412432986378}
-  _korean1: {fileID: 1057287824048274025}
-  _korean2: {fileID: 4270292904670070821}
-  _korean3: {fileID: 6788136098638814951}
 --- !u!1 &2391246615307166240
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +221,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2687470082886070310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041050785334314653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a130375a7ace44e99963c2e43d1dfa05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSystem: {fileID: 2683646122027797747}
+  _settingButtonImage: {fileID: 1694783011298068707}
+  _settingsBackground: {fileID: 2076169459934654960}
+  _koreanSettingsText: {fileID: 6769837412432986378}
+  _korean1: {fileID: 1057287824048274025}
+  _korean2: {fileID: 4270292904670070821}
+  _korean3: {fileID: 6788136098638814951}
 --- !u!1001 &8182280224455700312
 PrefabInstance:
   m_ObjectHideFlags: 0
