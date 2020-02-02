@@ -12,7 +12,7 @@ public class IconPress : MonoBehaviour
     private float _randomRotation;
     private float _positionY = 25f;
 
-    public bool IsClicked { get; private set; }
+    private bool _isClicked;
 
     private readonly Subject<Unit> _onClicked = new Subject<Unit>();
     public IObservable<Unit> OnClicked => _onClicked;
@@ -26,16 +26,16 @@ public class IconPress : MonoBehaviour
         _randomRotation = Random.Range(10, 20);
 
         if (Random.value > 0.5f)
-            _randomRotation = _randomRotation * -1;
+            _randomRotation *= -1;
 
         _button.OnClickAsObservable()
             .Subscribe(_ =>
             {
                 _onClicked.OnNext(Unit.Default);
-                IsClicked = true;
+                _isClicked = true;
             }).AddTo(gameObject);
 
-        Observable.EveryUpdate().Where(_ => IsClicked).Subscribe(_ => Fall()).AddTo(gameObject);
+        Observable.EveryUpdate().Where(_ => _isClicked).Subscribe(_ => Fall()).AddTo(gameObject);
     }
     
     private void Fall()

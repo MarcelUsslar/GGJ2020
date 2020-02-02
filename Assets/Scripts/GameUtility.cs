@@ -10,7 +10,10 @@ public static class GameUtility
     public static void Log(Text textField, string message, params object[] parameters)
     {
         if (textField == null)
+        {
+            Debug.LogWarning(string.Format(message, parameters));
             return;
+        }
 
         textField.text = string.Format(message, parameters);
     }
