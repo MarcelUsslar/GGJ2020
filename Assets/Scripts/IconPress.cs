@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class IconPress : MonoBehaviour
 {
     [SerializeField] private Button _button;
+    [SerializeField] private Image _hitBox;
 
     private float _randomDirection;
     private float _randomRotation;
@@ -33,6 +34,7 @@ public class IconPress : MonoBehaviour
             {
                 _onClicked.OnNext(Unit.Default);
                 _isClicked = true;
+                _hitBox.raycastTarget = false;
             }).AddTo(gameObject);
 
         Observable.EveryUpdate().Where(_ => _isClicked).Subscribe(_ => Fall()).AddTo(gameObject);

@@ -131,3 +131,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 7492370423366712186}
+  _hitBox: {fileID: 7169989245133693958}
