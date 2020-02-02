@@ -117,25 +117,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2687470082886070310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041050785334314653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a130375a7ace44e99963c2e43d1dfa05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioSystem: {fileID: 2683646122027797747}
-  _settingButton: {fileID: 6668949991154968365}
-  _settingsBackground: {fileID: 2076169459934654960}
-  _koreanSettingsText: {fileID: 6769837412432986378}
-  _korean1: {fileID: 1057287824048274025}
-  _korean2: {fileID: 4270292904670070821}
-  _korean3: {fileID: 6788136098638814951}
 --- !u!1 &2391246615307166240
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +191,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2687470082886070310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041050785334314653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a130375a7ace44e99963c2e43d1dfa05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSystem: {fileID: 2683646122027797747}
+  _settingButton: {fileID: 6668949991154968365}
+  _settingsBackground: {fileID: 2076169459934654960}
+  _koreanSettingsText: {fileID: 6769837412432986378}
+  _korean1: {fileID: 1057287824048274025}
+  _korean2: {fileID: 4270292904670070821}
+  _korean3: {fileID: 6788136098638814951}
 --- !u!1001 &8182280224455700312
 PrefabInstance:
   m_ObjectHideFlags: 0

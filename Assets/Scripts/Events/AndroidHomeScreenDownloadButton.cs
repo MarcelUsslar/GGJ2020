@@ -17,9 +17,8 @@ namespace Events
             var serialDisposable = new SerialDisposable().AddTo(gameObject);
             var inputDetection = GameUtility.CreateInputDetection(InputDetection.Internet, serialDisposable, null) as InternetDetection;
 
-            var onAllowedClick = _downloadButton.OnClickAsObservable()
-                .CombineLatest(inputDetection.InAllowedState, (_, isAllowed) => isAllowed)
-                .Where(clickAllowed => clickAllowed);
+            var inAllowedState = inputDetection.InAllowedState.ToReadOnlyReactiveProperty().AddTo(gameObject);
+            var onAllowedClick = _downloadButton.OnClickAsObservable().Where(_ => inAllowedState.Value);
 
             onAllowedClick.Subscribe(_ => ShowDownloadingIcon()).AddTo(gameObject);
             onAllowedClick.Delay(TimeSpan.FromSeconds(5)).Subscribe(_ => OnComplete()).AddTo(gameObject);

@@ -11,8 +11,7 @@ namespace Events
 
         private void Awake()
         {
-            Observable.Timer(TimeSpan.FromSeconds(1))
-                .SelectMany(_ => _screenButton.OnClickAsObservable())
+            Observable.Timer(TimeSpan.FromSeconds(1)).SelectMany(_ => _screenButton.OnClickAsObservable())
                 .Subscribe(_ => OnComplete()).AddTo(gameObject);
             ;
         }

@@ -11,17 +11,17 @@ namespace Events
         [SerializeField] private RectTransform _error2;
         [SerializeField] private RectTransform _error3;
         [SerializeField] private RectTransform _errorText;
-        [SerializeField] private bool _animate;
+        
+        private bool _animate;
 
-        private Dictionary<RectTransform, Vector2> _startMinAnchor = new Dictionary<RectTransform, Vector2>();
-        private Dictionary<RectTransform, Vector2> _startMaxAnchor = new Dictionary<RectTransform, Vector2>();
+        private readonly Dictionary<RectTransform, Vector2> _startMinAnchor = new Dictionary<RectTransform, Vector2>();
+        private readonly Dictionary<RectTransform, Vector2> _startMaxAnchor = new Dictionary<RectTransform, Vector2>();
 
         private void Awake()
         {
             var serialDisposable = new SerialDisposable().AddTo(gameObject);
-            var inputDetection = GameUtility.CreateInputDetection(InputDetection.MicrophoneLoudInput, serialDisposable, null);
+            var inputDetection = GameUtility.CreateInputDetection(InputDetection.Battery, serialDisposable, null);
 
-            _animate = true;
             inputDetection.Triggered.Subscribe(_ => _animate = true).AddTo(gameObject);
             inputDetection.Triggered.Delay(TimeSpan.FromSeconds(1)).Subscribe(_ => OnComplete()).AddTo(gameObject);
 

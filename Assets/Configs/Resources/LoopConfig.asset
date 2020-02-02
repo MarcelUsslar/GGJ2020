@@ -29,9 +29,9 @@ MonoBehaviour:
       type: 3}
   - EventPrefab: {fileID: 2687470082886070310, guid: d5d4a65f44f587745986fba882f2ede3,
       type: 3}
-  - EventPrefab: {fileID: 304025890226231790, guid: 57de6bcc76a796244bfb17a419f1edd9,
-      type: 3}
   - EventPrefab: {fileID: 6789322380253437964, guid: 41cf40f9fab9293439ef2d39dcb00296,
+      type: 3}
+  - EventPrefab: {fileID: 304025890226231790, guid: 57de6bcc76a796244bfb17a419f1edd9,
       type: 3}
   - EventPrefab: {fileID: 6038835973242432675, guid: 1fd698b23eabfff4fa19ff9ebef1d549,
       type: 3}
