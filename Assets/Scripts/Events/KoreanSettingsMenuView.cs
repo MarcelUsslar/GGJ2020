@@ -47,7 +47,7 @@ namespace Events
 
             inputDetection.Triggered.Subscribe(_ => OnComplete()).AddTo(gameObject);
 
-            Observable.EveryUpdate().Subscribe(_ => OpenAnimation()).AddTo(gameObject);
+            Observable.EveryUpdate().StartWith(0).Subscribe(_ => OpenAnimation()).AddTo(gameObject);
         }
         
         private void OpenAnimation()

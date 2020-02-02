@@ -10,12 +10,25 @@ public class GameController : MonoBehaviour
     private LoopConfig _config;
     private int _eventIndex = 0;
 
-    private void Start()
+    private void Awake()
     {
         _detectionDisposable = new SerialDisposable().AddTo(gameObject);
         _config = GameUtility.LoadConfig();
 
+        InitAllInputDetections();
+
         SpawnEvent();
+    }
+
+    private static void InitAllInputDetections()
+    {
+        var disposable = new SerialDisposable();
+        foreach (var detection in EnumHelper<InputDetection>.Iterator)
+        {
+            GameUtility.CreateInputDetection(detection, disposable, null);
+        }
+
+        disposable.Dispose();
     }
 
     private void SpawnEvent()
