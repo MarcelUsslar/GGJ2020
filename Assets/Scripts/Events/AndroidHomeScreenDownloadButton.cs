@@ -7,6 +7,8 @@ namespace Events
 {
     public class AndroidHomeScreenDownloadButton : AbstractBasicTriggerView
     {
+        [SerializeField] private AudioClip _downloadingClip;
+        [Space]
         [SerializeField] private Button _downloadButton;
         [SerializeField] private GameObject _downloadingIcon;
 
@@ -28,6 +30,8 @@ namespace Events
 
         private void ShowDownloadingIcon()
         {
+            AudioSystem.PlayClipExternal(_downloadingClip);
+
             _downloadingIcon.SetActive(true);
             _downloadingIcon.transform.position = _downloadButton.transform.position;
 
