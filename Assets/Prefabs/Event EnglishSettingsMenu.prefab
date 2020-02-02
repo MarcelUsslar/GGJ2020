@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568f38419238941508e333b5975c6a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Error1: {fileID: 4746224024578386635}
-  Error2: {fileID: 4746224026178521879}
-  Error3: {fileID: 4746224024842186261}
-  ErrorText: {fileID: 3240608893027308843}
+  _error1: {fileID: 4746224024578386635}
+  _error2: {fileID: 4746224026178521879}
+  _error3: {fileID: 4746224024842186261}
+  _errorText: {fileID: 3240608893027308843}
