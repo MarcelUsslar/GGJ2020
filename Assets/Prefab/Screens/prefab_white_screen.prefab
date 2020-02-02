@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a09a1b7b50413688619ef3d0bd2582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSystem: {fileID: 212941524259389776}
 --- !u!1001 &5247180858909690468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,10 +125,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _onStart
+      value: 
+      objectReference: {fileID: 8300000, guid: 10db1cddd6e009c4cbd806794eb0cfb6, type: 3}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _onSuccess
+      value: 
+      objectReference: {fileID: 8300000, guid: 5788396b7b53ba3488fd825cc7e835a1, type: 3}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _initialStartDelay
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8306963237456560474, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
       propertyPath: m_Name
-      value: prefab_default_canvas
+      value: prefab_white_screen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67e8134be2e41004bacf269a78c78d19, type: 3}
@@ -137,3 +153,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5247180858909690468}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &212941524259389776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+    type: 3}
+  m_PrefabInstance: {fileID: 5247180858909690468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294736664264788798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6da67442cbe4a3bb31b7c13b71fa5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

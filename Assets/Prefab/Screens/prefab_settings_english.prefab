@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568f38419238941508e333b5975c6a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSystem: {fileID: 9045393278642014237}
   _error1: {fileID: 5113045540238005275}
   _error2: {fileID: 2728733613994340073}
   _error3: {fileID: 4347350632847684699}
@@ -147,6 +148,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8aa32666ff3c64e649cdc716d3157287,
         type: 3}
+    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: _loopedClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: _onStart
+      value: 
+      objectReference: {fileID: 8300000, guid: a5beae1e846ce4849b1dea4f83052e5f, type: 3}
+    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: _loopedClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d80e6a8247a783d41819ddc052de04bf, type: 3}
+    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: _loopDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
+        type: 3}
+      propertyPath: _initialStartDelay
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7916774416845957573, guid: 6e35469b085fc414aa355ab83a3de63e,
         type: 3}
       propertyPath: m_Name
@@ -166,6 +192,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2969213755958307766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9045393278642014237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6103351038967866283, guid: 6e35469b085fc414aa355ab83a3de63e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2969213755958307766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966006178017034867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6da67442cbe4a3bb31b7c13b71fa5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5855395771766871117 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8680212483423879163, guid: 6e35469b085fc414aa355ab83a3de63e,

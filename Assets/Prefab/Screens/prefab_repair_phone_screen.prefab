@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841271d34ca1c4579a61461f9359f0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSystem: {fileID: 959518056584030068}
   _repairButton: {fileID: 1076178754}
 --- !u!1001 &5149262087530245184
 PrefabInstance:
@@ -332,10 +333,40 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _loopedClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _loopedClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c35216134aa29a46bfff59b535f3d34, type: 3}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _initialLoopDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _loopedClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 59e9cec00992d3347be0f6149c1ae4a8, type: 3}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _loopDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+        type: 3}
+      propertyPath: _loopedClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26c4860ab0fd49e4bbd88bbc99bc4213, type: 3}
     - target: {fileID: 8306963237456560474, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
       propertyPath: m_Name
-      value: prefab_default_canvas
+      value: prefab_repair_phone_screen
       objectReference: {fileID: 0}
     - target: {fileID: 8306963237456560474, guid: 67e8134be2e41004bacf269a78c78d19,
         type: 3}
@@ -356,3 +387,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5149262087530245184}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &959518056584030068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5342744705230949172, guid: 67e8134be2e41004bacf269a78c78d19,
+    type: 3}
+  m_PrefabInstance: {fileID: 5149262087530245184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764333755833232666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6da67442cbe4a3bb31b7c13b71fa5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
